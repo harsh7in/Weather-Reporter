@@ -1,5 +1,27 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-hello
+
+<div class="head">
+    <div class="container" style="background-color: aqua;">
+        <div class="my-5" >
+            <h1>What's the weather </h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+<div class="row">
+   <div class="col-md-4 offset-md-4">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="City Nme" aria-label="Recipient's username"
+            aria-describedby="button-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Add City</button>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+
 {% endblock%}
