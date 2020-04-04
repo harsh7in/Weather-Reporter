@@ -1,10 +1,15 @@
 from django.shortcuts import render
 import requests
+from . import models
+from .models import city
+
+
 # Create your views here.
 def home(request):
 
     url= 'http://api.openweathermap.org/data/2.5/weather?q={}&APPID=f6a2db50ce45d87de65cf404b5b8983e'
-    city= 'China'
+    # return city from database
+    cities=city.objects.get()
 
     # request the json data and convert it into Python data_types
     city_weather=requests.get(url.format(city)).json()
