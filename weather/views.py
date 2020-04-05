@@ -1,12 +1,14 @@
 from django.shortcuts import render
 import requests
 from .models import city 
+from .forms import city_form
 # Create your views here.
 def home(request):
 
     url= 'http://api.openweathermap.org/data/2.5/weather?q={}&APPID=f6a2db50ce45d87de65cf404b5b8983e'
     cities=city.objects.all()
 
+    form=city_form
     weather_data=[]
     
     for City in cities:
@@ -23,5 +25,5 @@ def home(request):
         }
         weather_data.append(weather)
 
-    context = {'weather_data' : weather_data}
+    context = {'weather_data' : weather_data  ,  'form': form }
     return render(request,"home.html", context)

@@ -10,13 +10,18 @@
     </div>
 </div>
 
+
+
+
 <div class="container">
 <div class="row">
    <div class="col-md-4 offset-md-4">
     <div class="input-group mb-3">
         <form method="POST">
-        <input type="text" class="form-control" placeholder="City Nme" aria-label="Recipient's username"
-            aria-describedby="button-addon2">
+            {% csrf_token %}
+            {{ form.name }}
+            <!-- <input type="text" class="input" placeholder="City Name" aria-label="Recipient's username"
+            aria-describedby="button-addon2"> -->
         <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="button" id="button-addon2">Add City</button>
         </div>
