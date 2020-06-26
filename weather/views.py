@@ -9,7 +9,7 @@ from .forms import city_form
 def home(request):
 
 
-    url='http://api.openweathermap.org/data/2.5/weather?q=India&units=imperial&appid=f6a2db50ce45d87de65cf404b5b8983e'
+    url='http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=f6a2db50ce45d87de65cf404b5b8983e'
     cities=city.objects.all()
     if request.method == 'POST':
         form = city_form(request.POST)
@@ -21,7 +21,7 @@ def home(request):
     for City in cities:
 
         # request the json data and convert it into Python data_types
-        city_weather=requests.get(url.format(city)).json()
+        city_weather=requests.get(url.format(City)).json()
 
         # Dictionary for getting api objects
         weather = {
