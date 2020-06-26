@@ -4,7 +4,7 @@ from .models import city
 class city_form(ModelForm):
     class Meta:
         model=city
-        fields=['name']
+        fields='__all__'
         widgets={
             'name': TextInput(attrs={ 'class': 'input' , 'placeholder' : 'City Name'}),
         }
