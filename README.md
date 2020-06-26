@@ -1,2 +1,2 @@
 # Weather-app-Django
-This a basic weather app built on Django using Weather API.
+This is a basic weather app using <strong> Django </strong> and <strong> Weather API </strong>.
